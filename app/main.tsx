@@ -1,6 +1,6 @@
 import CoctomBtm from "@/components/CostomBtm/CostomBtm";
 import { useState } from "react";
-import { Dimensions, Pressable, Text, View } from "react-native";
+import { Dimensions, Pressable, StyleSheet, Text, View } from "react-native";
 
 const { width, height } = Dimensions.get("window");
 
@@ -11,26 +11,17 @@ export default function Main() {
     setIsActive((prev) => !prev);
   };
 
-  const style = {
-    container: {
-      paddingHorizontal: width * 0.05,
-      paddingVertical: height * 0.03,
-    },
-    switchBtn: {
-      width: 3,
-      height: 3,
-      borderStyle: "solid",
-      borderColor: "#000000ff",
-      borderRadius: 5,
-      bacgroundColor: isActive ? "brown" : "",
-    },
-  };
-
   return (
     <View style={style.container}>
-      <View>
-        <Pressable onPress={handlePress}></Pressable>
-        <Text>Switch status active component</Text>
+      <View style={style.containerBtn}>
+        <Pressable
+          style={[
+            style.switchBtn,
+            { backgroundColor: isActive ? "green" : "white" },
+          ]}
+          onPress={handlePress}
+        ></Pressable>
+        <Text>Switch status active components</Text>
       </View>
       <Text>{"  "}</Text>
       <View>
@@ -39,3 +30,22 @@ export default function Main() {
     </View>
   );
 }
+
+const style = StyleSheet.create({
+  container: {
+    paddingHorizontal: width * 0.05,
+    paddingVertical: height * 0.03,
+  },
+  containerBtn: {
+    flexDirection: "row",
+    gap: 7,
+  },
+  switchBtn: {
+    width: 20,
+    height: 20,
+    marginBottom: 5,
+    borderStyle: "solid",
+    borderColor: "#000000ff",
+    borderRadius: 4,
+  },
+});
