@@ -5,7 +5,7 @@ export default function Index() {
 
   return (
     <View style = {style.container} >
-      <Link href="/main">Go to own component</Link>
+      <Link href="/main">Go to own components</Link>
     </View>
   );
 }
