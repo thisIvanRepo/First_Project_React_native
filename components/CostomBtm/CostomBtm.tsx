@@ -9,7 +9,9 @@ export default function CoctomBtm({ name, status }: Props) {
   return (
     <TouchableOpacity activeOpacity={status ? 0.7 : 1}>
       <View style={style.btn}>
-        <Text style={style.text}>{name}</Text>
+        <Text style={[style.text, status ? { color: "#404040" } : {}]}>
+          {name}
+        </Text>
       </View>
     </TouchableOpacity>
   );
