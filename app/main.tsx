@@ -1,5 +1,6 @@
 import CardMaster from "@/components/CardMaster/CardMaster";
 import CoctomBtm from "@/components/CostomBtm/CostomBtm";
+import InputField from "@/components/InputField/InputField";
 import { useState } from "react";
 import { Dimensions, Pressable, StyleSheet, Text, View } from "react-native";
 
@@ -25,14 +26,16 @@ export default function Main() {
         <Text>Switch status disabled</Text>
       </View>
       <Text>{"  "}</Text>
-      <View>
+      <View style={{ gap: 20 }}>
         <CoctomBtm name="Login" status={isActive}></CoctomBtm>
-        <Text>{"  "}</Text>
+
         <CardMaster
           name="Artem Bilco"
           status={isActive}
           rating={4.5}
         ></CardMaster>
+
+        <InputField placeholder="Your email" status={isActive}></InputField>
       </View>
     </View>
   );
