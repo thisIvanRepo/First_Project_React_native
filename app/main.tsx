@@ -1,3 +1,4 @@
+import CardMaster from "@/components/CardMaster/CardMaster";
 import CoctomBtm from "@/components/CostomBtm/CostomBtm";
 import { useState } from "react";
 import { Dimensions, Pressable, StyleSheet, Text, View } from "react-native";
@@ -21,11 +22,17 @@ export default function Main() {
           ]}
           onPress={handlePress}
         ></Pressable>
-        <Text>Switch status active components</Text>
+        <Text>Switch status disabled</Text>
       </View>
       <Text>{"  "}</Text>
       <View>
         <CoctomBtm name="Login" status={isActive}></CoctomBtm>
+        <Text>{"  "}</Text>
+        <CardMaster
+          name="Artem Bilco"
+          status={isActive}
+          rating={4.5}
+        ></CardMaster>
       </View>
     </View>
   );
